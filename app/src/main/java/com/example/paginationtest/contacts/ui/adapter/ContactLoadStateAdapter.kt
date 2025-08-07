@@ -1,4 +1,4 @@
-package com.example.paginationtest.adapter
+package com.example.paginationtest.contacts.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View

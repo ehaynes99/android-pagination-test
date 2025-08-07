@@ -1,12 +1,12 @@
-package com.example.paginationtest.repository
+package com.example.paginationtest.contacts.repository
 
 import androidx.paging.Pager
 import androidx.paging.PagingConfig
 import androidx.paging.PagingData
-import com.example.paginationtest.api.ContactApiClient
-import com.example.paginationtest.data.Contact
-import com.example.paginationtest.data.Cursor
-import com.example.paginationtest.paging.ContactPagingSource
+import com.example.paginationtest.contacts.api.ContactApiClient
+import com.example.paginationtest.contacts.data.Contact
+import com.example.paginationtest.contacts.data.Cursor
+import com.example.paginationtest.contacts.paging.ContactPagingSource
 import kotlinx.coroutines.flow.Flow
 
 class ContactRepository(private val apiClient: ContactApiClient) {

@@ -1,14 +1,14 @@
-package com.example.paginationtest.viewmodel
+package com.example.paginationtest.contacts.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.paging.PagingData
 import androidx.paging.cachedIn
-import com.example.paginationtest.api.ContactApiClient
-import com.example.paginationtest.data.Contact
-import com.example.paginationtest.data.Cursor
-import com.example.paginationtest.repository.ContactRepository
+import com.example.paginationtest.contacts.api.ContactApiClient
+import com.example.paginationtest.contacts.data.Contact
+import com.example.paginationtest.contacts.data.Cursor
+import com.example.paginationtest.contacts.repository.ContactRepository
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow

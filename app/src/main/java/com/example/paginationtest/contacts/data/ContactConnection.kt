@@ -1,4 +1,4 @@
-package com.example.paginationtest.data
+package com.example.paginationtest.contacts.data
 
 data class ContactConnection(
     val edges: List<ContactEdge>,

@@ -1,8 +1,8 @@
-package com.example.paginationtest.api
+package com.example.paginationtest.contacts.api
 
 import android.content.Context
 import android.util.Log
-import com.example.paginationtest.data.*
+import com.example.paginationtest.contacts.data.*
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken

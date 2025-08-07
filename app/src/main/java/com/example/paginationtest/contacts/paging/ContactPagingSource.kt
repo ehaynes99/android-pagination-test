@@ -1,10 +1,10 @@
-package com.example.paginationtest.paging
+package com.example.paginationtest.contacts.paging
 
 import androidx.paging.PagingSource
 import androidx.paging.PagingState
-import com.example.paginationtest.api.ContactApiClient
-import com.example.paginationtest.data.Contact
-import com.example.paginationtest.data.Cursor
+import com.example.paginationtest.contacts.api.ContactApiClient
+import com.example.paginationtest.contacts.data.Contact
+import com.example.paginationtest.contacts.data.Cursor
 
 class ContactPagingSource(
     private val apiClient: ContactApiClient,

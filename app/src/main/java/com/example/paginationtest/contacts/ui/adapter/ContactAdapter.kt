@@ -1,4 +1,4 @@
-package com.example.paginationtest.adapter
+package com.example.paginationtest.contacts.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.View
@@ -7,8 +7,7 @@ import android.widget.TextView
 import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.example.paginationtest.R
-import com.example.paginationtest.data.Contact
+import com.example.paginationtest.contacts.data.Contact
 
 class ContactAdapter(
     private val onContactClick: (Contact) -> Unit
