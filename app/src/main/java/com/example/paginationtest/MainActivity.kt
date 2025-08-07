@@ -13,6 +13,7 @@ import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.paginationtest.adapter.ContactAdapter
+import com.example.paginationtest.adapter.ContactLoadStateAdapter
 import com.example.paginationtest.data.Contact
 import com.example.paginationtest.data.Cursor
 import com.example.paginationtest.viewmodel.ContactViewModel
@@ -53,7 +54,10 @@ class MainActivity : AppCompatActivity() {
         adapter = ContactAdapter { contact ->
             navigateToContactDetail(contact)
         }
-        recyclerView.adapter = adapter
+        
+        // Add loading state adapter for spinners
+        val loadStateAdapter = ContactLoadStateAdapter { adapter.retry() }
+        recyclerView.adapter = adapter.withLoadStateFooter(loadStateAdapter)
         recyclerView.layoutManager = LinearLayoutManager(this)
         
         sharedPrefs = getSharedPreferences(PREF_NAME, MODE_PRIVATE)
