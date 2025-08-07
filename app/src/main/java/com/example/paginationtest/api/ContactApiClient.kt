@@ -6,7 +6,9 @@ import com.example.paginationtest.data.*
 import com.google.gson.Gson
 import com.google.gson.GsonBuilder
 import com.google.gson.reflect.TypeToken
+import kotlinx.coroutines.delay
 import java.io.InputStreamReader
+import kotlin.random.Random
 
 class ContactApiClient(private val context: Context) {
     
@@ -35,7 +37,7 @@ class ContactApiClient(private val context: Context) {
         reader.close()
     }
     
-    fun getContacts(
+    suspend fun getContacts(
         after: Cursor? = null,
         before: Cursor? = null,
         first: Int? = null,
@@ -47,6 +49,10 @@ class ContactApiClient(private val context: Context) {
         first?.let { inputParts.add("first: $it") }
         last?.let { inputParts.add("last: $it") }
         Log.d(TAG, "INPUT: ${inputParts.joinToString(", ")}")
+        
+        // Simulate network delay
+        val delayMs = Random.nextLong(100, 301)
+        delay(delayMs)
         
         fetchCount++
         val allContacts = contacts
@@ -121,7 +127,7 @@ class ContactApiClient(private val context: Context) {
         
         Log.d(TAG, "OUTPUT pageInfo: ${prettyGson.toJson(pageInfo)}")
         Log.d(TAG, "OUTPUT size: ${slicedContacts.size}")
-        Log.d(TAG, "Total fetches: $fetchCount")
+        Log.d(TAG, "Total fetches: $fetchCount (delayed ${delayMs}ms)")
         
         return result
     }
